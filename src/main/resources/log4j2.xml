@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+		<Property name="APP_LOG_ROOT">logs</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+		<RollingFile name="errorLog"
+					 fileName="${APP_LOG_ROOT}/Error/application.log"
+					 filePattern="${APP_LOG_ROOT}/Error/application-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingFile>
+
+		<RollingFile name="appLog"
+					 fileName="${APP_LOG_ROOT}/SpringBoot2App/application.log"
+					 filePattern="${APP_LOG_ROOT}/SpringBoot2App/application-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingFile>
+
+		<RollingFile name="loggerAOP"
+					 fileName="${APP_LOG_ROOT}/AOP/application.log"
+					 filePattern="${APP_LOG_ROOT}/AOP/application-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingFile>
+
+		<RollingFile name="loggerHibernate"
+					 fileName="${APP_LOG_ROOT}/Hibernate/application.log"
+					 filePattern="${APP_LOG_ROOT}/AOP/application-%d{yyyy-MM-dd}-%i.log">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="19500KB" />
+			</Policies>
+			<DefaultRolloverStrategy max="1" />
+		</RollingFile>
+
+	</Appenders>
+	<Loggers>
+
+		<Logger name="com.atos.userapi.helpers" level="debug" additivity="false">
+			<AppenderRef ref="loggerAOP" />
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Logger name="org.hibernate" level="debug" additivity="false">
+			<AppenderRef ref="loggerHibernate" />
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Logger name="org.springframework" level="debug" additivity="false">
+			<AppenderRef ref="appLog" />
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Root level="error">
+			<AppenderRef ref="errorLog" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+</Configuration>
