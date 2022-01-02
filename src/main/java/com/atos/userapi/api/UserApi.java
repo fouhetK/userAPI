@@ -17,7 +17,7 @@ public class UserApi {
     @Autowired
     UserService us;
 
-    @GetMapping(value="")
+    @GetMapping(value="", produces = "application/json")
     public ResponseEntity<Iterable<UserEntity>> getAll(){
         return ResponseEntity.ok(us.findAll());
     }

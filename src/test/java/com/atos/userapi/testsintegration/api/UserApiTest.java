@@ -1,4 +1,4 @@
-package com.atos.userapi.testsintegrationcomposants.api;
+package com.atos.userapi.testsintegration.api;
 
 import com.atos.userapi.entities.UserEntity;
 import com.atos.userapi.repositories.UserRepository;
@@ -16,7 +16,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;

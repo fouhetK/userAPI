@@ -1,4 +1,4 @@
-package com.atos.userapi.testsintegrationcomposants.services;
+package com.atos.userapi.testsintegration.services;
 
 import com.atos.userapi.services.UserService;
 import com.atos.userapi.entities.UserEntity;

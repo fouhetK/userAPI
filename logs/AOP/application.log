@@ -201,3 +201,45 @@
 2021-12-29T15:50:15.839+0100 ERROR Error : 400 BAD_REQUEST "The user must have a country"
 2021-12-29T15:50:15.845+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=null, country='France', phone='null', gender=null}
 2021-12-29T15:50:15.845+0100 ERROR Error : 400 BAD_REQUEST "The user must have a birthdate (yyyy-mm-dd)"
+2021-12-29T17:48:15.054+0100 DEBUG parameter 0 : 0
+2021-12-29T17:48:15.086+0100 ERROR Error : 404 NOT_FOUND "User not found"
+2021-12-29T17:48:15.320+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=1989-12-12, country='France', phone='null', gender=null}
+2021-12-29T17:48:15.323+0100 DEBUG 1 milliseconds
+2021-12-29T17:48:15.323+0100 DEBUG return value : <200 OK OK,UserEntity{id=6, username='test addUser', birthdate=1989-12-12, country='France', phone='null', gender=null},[]>
+2021-12-29T17:48:15.332+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=1989-12-12, country='England', phone='null', gender=null}
+2021-12-29T17:48:15.332+0100 ERROR Error : 400 BAD_REQUEST "The user must be from France to be registered"
+2021-12-29T17:48:15.341+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=2010-12-12, country='France', phone='null', gender=null}
+2021-12-29T17:48:15.341+0100 ERROR Error : 400 BAD_REQUEST "The user must be an adult (above 18 years old) to be registered"
+2021-12-29T17:48:15.350+0100 DEBUG parameter 0 : UserEntity{id=0, username='null', birthdate=1989-12-12, country='France', phone='null', gender=null}
+2021-12-29T17:48:15.350+0100 ERROR Error : 400 BAD_REQUEST "The user must have a username"
+2021-12-29T17:48:15.359+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=1989-12-12, country='France', phone='05 06 04', gender=null}
+2021-12-29T17:48:15.360+0100 ERROR Error : 400 BAD_REQUEST "Phone number is invalid"
+2021-12-29T17:48:15.368+0100 DEBUG parameter 0 : 7
+2021-12-29T17:48:15.370+0100 DEBUG 2 milliseconds
+2021-12-29T17:48:15.371+0100 DEBUG return value : <200 OK OK,UserEntity{id=7, username='test addUser', birthdate=1989-12-12, country='France', phone='null', gender=null},[]>
+2021-12-29T17:48:15.379+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=1989-12-12, country='null', phone='null', gender=null}
+2021-12-29T17:48:15.379+0100 ERROR Error : 400 BAD_REQUEST "The user must have a country"
+2021-12-29T17:48:15.387+0100 DEBUG parameter 0 : UserEntity{id=0, username='test addUser', birthdate=null, country='France', phone='null', gender=null}
+2021-12-29T17:48:15.387+0100 ERROR Error : 400 BAD_REQUEST "The user must have a birthdate (yyyy-mm-dd)"
+2021-12-29T17:50:30.995+0100 DEBUG parameter 0 : UserEntity{id=0, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=M}
+2021-12-29T17:50:31.019+0100 DEBUG 21 milliseconds
+2021-12-29T17:50:31.019+0100 DEBUG return value : <200 OK OK,UserEntity{id=1, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=M},[]>
+2021-12-29T17:50:33.234+0100 DEBUG parameter 0 : UserEntity{id=0, username='kevin F', birthdate=1989-12-12, country='France', phone='null', gender=M}
+2021-12-29T17:50:33.237+0100 DEBUG 1 milliseconds
+2021-12-29T17:50:33.237+0100 DEBUG return value : <200 OK OK,UserEntity{id=2, username='kevin F', birthdate=1989-12-12, country='France', phone='null', gender=M},[]>
+2021-12-29T17:50:35.227+0100 DEBUG parameter 0 : UserEntity{id=0, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=null}
+2021-12-29T17:50:35.228+0100 DEBUG 1 milliseconds
+2021-12-29T17:50:35.228+0100 DEBUG return value : <200 OK OK,UserEntity{id=3, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=null},[]>
+2021-12-29T17:50:37.356+0100 DEBUG parameter 0 : UserEntity{id=0, username='kevin F', birthdate=1989-12-12, country='France', phone='null', gender=null}
+2021-12-29T17:50:37.359+0100 DEBUG 3 milliseconds
+2021-12-29T17:50:37.359+0100 DEBUG return value : <200 OK OK,UserEntity{id=4, username='kevin F', birthdate=1989-12-12, country='France', phone='null', gender=null},[]>
+2021-12-29T17:50:52.399+0100 DEBUG parameter 0 : 3
+2021-12-29T17:50:52.407+0100 DEBUG 8 milliseconds
+2021-12-29T17:50:52.407+0100 DEBUG return value : <200 OK OK,UserEntity{id=3, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=null},[]>
+2021-12-29T17:50:56.165+0100 DEBUG parameter 0 : 9
+2021-12-29T17:50:56.167+0100 ERROR Error : 404 NOT_FOUND "User not found"
+2021-12-29T17:51:02.287+0100 DEBUG parameter 0 : UserEntity{id=0, username='null', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=M}
+2021-12-29T17:51:02.287+0100 ERROR Error : 400 BAD_REQUEST "The user must have a username"
+2021-12-29T18:08:46.355+0100 DEBUG parameter 0 : UserEntity{id=0, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=M}
+2021-12-29T18:08:46.376+0100 DEBUG 20 milliseconds
+2021-12-29T18:08:46.376+0100 DEBUG return value : <200 OK OK,UserEntity{id=1, username='kevin F', birthdate=1989-12-12, country='France', phone='04 40 40 40 40', gender=M},[]>
