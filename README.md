@@ -7,24 +7,15 @@
 
 It is needed to have Git or a GUI (like TortoiseGit) installed on your PC
 
-- to download Git : https://git-scm.com/downloads
+- to download Git : [Git](https://git-scm.com/downloads)
 
 ### Java version
 
 The current version of Java used in this API is the jdk-11.0.2
 
-- It can be downloaded here : https://www.oracle.com/fr/java/technologies/javase/jdk11-archive-downloads.html
+- It can be downloaded here : [Java jdk-11.0.2](https://www.oracle.com/fr/java/technologies/javase/jdk11-archive-downloads.html)
 
-
-## The API
-
-### Spring
-
-The API use the v2.6.1 of Spring Boot.
-
-## How to use the API:
-
-### Download the API source code
+### Download API
 
 If you are using Git without any UI, open a `Git Bash` console and use the commande
 ```git clone https://github.com/fouhetK/userAPI.git```
@@ -33,7 +24,33 @@ If you are using Git without any UI, open a `Git Bash` console and use the comma
 
 Open the project with IntelliJ or any Java IDE.
 
-:warning: The project is using Maven for its dependency, it may take some time for Maven to download them.
+⚠️ The project is using Maven for its dependency, it may take some time for Maven to download them.
+
+
+## The API
+
+### Spring
+
+The API was made using the v2.6.1 of Spring Boot.
+
+### Database
+
+The API use an empty embedded database H2.
+
+### Logged information
+
+The current API log the information in the console and in four differents files that are situated in the `logs` folder.
+- SpringBoot2App/application.log for all the message of the Spring framwork.
+- Hibernate/application.log for all the message of the Hibernate framwork.
+- AOP/application.log to register the information about each request using the Aspect Oriented Programming (Parameters, time execution, error and return value).
+- Error/application.log to register all Error that doesn't come from the three precedent sources.
+
+All the information about the logging are located in the `log4j2.xml` within the `src/main/resources/` folder.
+
+The default value for the level of logs are `debug` for the AOP, Hibernate and Spring logger and `error` for the Error.
+
+
+## How to use the API:
 
 ### Start the project
 
@@ -41,17 +58,24 @@ To start the project, Run the `UserApiApplication` situated in the `src/main/jav
 
 The API is currently using the basic configuration, meaning it will be usable on localhost with a specific port (8080 for windows).
 
-### Logged information
+If you are using another operating system than windows, the port will be displayed in the console of the IDE used like:
+```2022-01-03T17:58:09.819+0100 INFO Tomcat initialized with port(s): 8080 (http)```
 
-The current API log the information in the console and in four differents files that are situated in the `logs` folder.
-- SpringBoot2App/application.log  for all the logs of the Spring framwork.
-- Hibernate/application.log to register all the message of the Hibernate framwork.
-- AOP/application.log to register the information about each request using the Aspect Oriented Programming (Parameters, time execution, error and return value).
-- Error/application.log to register all Error that doesn't come from the three precedent sources.
+### Available Call
 
-All the information about the logging are located in the `log4j2.xml` within the `src/main/resources/` folder.
-
-The default value for the Logger are `debug` for the AOP, Hibernate and Spring logger and `error` for the Error.
+The current API allow three request:
+1. Get to `http://localhost:8080/api/user` to recuperate the informations of all the Users present in the database.
+2. Get to `http://localhost:8080/api/user/$` where $ is the Id of the user you want to recuperate the information of.
+   - If the Id is not found, the API return an Error 404 User not found.
+3. Post to `http://localhost:8080/api/user`
+   - The body of the Post request must contain the infomration of the User in JSON format.
+   - For a user to be created, he need three variable, a `username`, a `country` and a `birthdate`
+     - The username have no restriction.
+     - The country must be `France` if you want the User to be registered succesfuly.
+     - the birthdate must be in `yyyy-mm-dd` to be valide. ⚠️The user must be an Adult (above 18 year old) to be registered succesfuly.
+   - The user also possed two "optional" variable, a `gender` and a `phone`.
+     - Currently, the API only accept `M` for Male and `F` for Female as a gender.
+     - The Phone number accept differents format (xx xx xx xx xx, +33x xx xx xx xx, xx xxxx xxxx , xx-xx-xx-xx-xx, xxxxxxxxxx ...)
 
 
 ## Tests
