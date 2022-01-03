@@ -72,7 +72,7 @@ public class UserService {
 
         // check the validity of the non null value
         if (user.getPhone() != null && user.getPhone() != "" && !Pattern.compile(regexPattern).matcher(user.getPhone()).matches()) {
-            throw new InvalidObjectException("Phone number is invalid");
+            throw new InvalidObjectException("Format of the phone number is invalid");
         } else if (!user.getCountry().equals("France")){
             throw new InvalidObjectException("The user must be from France to be registered");
         } else if (Period.between(user.getBirthdate().toLocalDate(), LocalDate.now()).getYears() < 18){

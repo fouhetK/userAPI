@@ -119,7 +119,7 @@ public class UserApiTest {
                         .content(mapper.writeValueAsString(user))
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is4xxClientError())
-                .andExpect(status().reason("Phone number is invalid"));
+                .andExpect(status().reason("Format of the phone number is invalid"));
     }
 
     @Test
