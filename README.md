@@ -16,6 +16,12 @@ The current version of Java used in this API is the jdk-11.0.2
 - It can be downloaded here : https://www.oracle.com/fr/java/technologies/javase/jdk11-archive-downloads.html
 
 
+## The API
+
+### Spring
+
+The API use the v2.6.1 of Spring Boot.
+
 ## How to use the API:
 
 ### Download the API source code
@@ -41,7 +47,7 @@ The current API log the information in the console and in four differents files 
 - SpringBoot2App/application.log  for all the logs of the Spring framwork.
 - Hibernate/application.log to register all the message of the Hibernate framwork.
 - AOP/application.log to register the information about each request using the Aspect Oriented Programming (Parameters, time execution, error and return value).
-- Error/application.log to register all Error.
+- Error/application.log to register all Error that doesn't come from the three precedent sources.
 
 All the information about the logging are located in the `log4j2.xml` within the `src/main/resources/` folder.
 
@@ -68,7 +74,7 @@ The integration test is made in three step.
 3. The test between Postman and our API.
    - For this test, the API must be started and Postman used to send Post/Get message.
    - A collection of Postman request are present within the `Tests Postman` folder.
-   - Within this collection, the request are separated in three
-     - The Get at the base of the collection
-     - The Post request that result in a Success
-     - The Post request that result in an Error
+   - Within this collection, the request are separated in three:
+     - The Get at the base of the collection.
+     - The Post request that result in a Success in the "Success" folder.
+     - The Post request that result in an Error in the "Error" folder.
