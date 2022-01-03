@@ -48,10 +48,10 @@ All the information about the logging are located in the `log4j2.xml` within the
 The default value for the Logger are `debug` for the AOP, Hibernate and Spring logger and `error` for the Error.
 
 
-
 ## Tests
 
 All the tests are contained within the `src/test/java/com/atos/userapi/` folder.
+
 To run the test and see the result, right click on the test and select `Run`
 
 ### Unit tests
@@ -63,9 +63,9 @@ To run the test and see the result, right click on the test and select `Run`
 ### Integration tests
 
 The integration test is made in three step.
-1.The test between the UserService and the UserRepository.
-2.The test between the UserApi and the UserService with a Mock Mvc to emulate the Post/Get message.
-3.The test between Postman and our API.
+1. The test between the UserService and the UserRepository.
+2. The test between the UserApi and the UserService with a Mock Mvc to emulate the Post/Get message.
+3. The test between Postman and our API.
   - For this test, the API must be started and Postman used to send Post/Get message.
   - A collection of Postman request are present within the `Tests Postman` folder.
   - Within this collection, the request are separated in three
