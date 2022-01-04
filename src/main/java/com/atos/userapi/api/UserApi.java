@@ -15,17 +15,17 @@ import java.io.InvalidObjectException;
 public class UserApi {
 
     @Autowired
-    UserService us;
+    UserService userService;
 
     @GetMapping(value="", produces = "application/json")
-    public ResponseEntity<Iterable<UserEntity>> getAll(){
-        return ResponseEntity.ok(us.findAll());
+    public ResponseEntity<Iterable<UserEntity>> getAllUser(){
+        return ResponseEntity.ok(userService.findAll());
     }
 
     @PostMapping(value = "", consumes = "application/json")
     public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity user) {
         try{
-            us.saveUser(user);
+            userService.saveUser(user);
 
             return ResponseEntity.ok(user);
         }catch ( InvalidObjectException e ){
@@ -36,7 +36,7 @@ public class UserApi {
     @GetMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<UserEntity> getUser(@PathVariable("id") int id){
         try{
-            UserEntity user = us.findById(id);
+            UserEntity user = userService.findById(id);
             return ResponseEntity.ok(user);
         } catch (Exception e){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND , "User not found" );

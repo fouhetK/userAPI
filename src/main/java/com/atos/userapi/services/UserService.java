@@ -15,19 +15,19 @@ import java.util.regex.Pattern;
 public class UserService {
 
     @Autowired
-    private UserRepository ur;
+    private UserRepository userRepository;
 
     public Iterable<UserEntity> findAll() {
-        return ur.findAll();
+        return userRepository.findAll();
     }
 
     public UserEntity findById(int id) {
-        return ur.findById(id).get();
+        return userRepository.findById(id).get();
     }
 
     public UserEntity saveUser(UserEntity user) throws InvalidObjectException {
         checkUser(user);
-        ur.save(user);
+        userRepository.save(user);
 
         return user;
     }
@@ -43,7 +43,7 @@ public class UserService {
             userToUpdate.setUsername(user.getUsername());
             userToUpdate.setPhone(user.getPhone());
 
-            ur.save(userToUpdate);
+            userRepository.save(userToUpdate);
 
             return userToUpdate;
         } catch (NoSuchElementException e) {
@@ -52,7 +52,7 @@ public class UserService {
     }
 
     public void deleteById(int id) {
-        ur.deleteById(id);
+        userRepository.deleteById(id);
     }
 
     private void checkObligatoryValue(UserEntity user) throws InvalidObjectException {
