@@ -17,7 +17,7 @@ The current version of Java used in this API is the jdk-11.0.2
 
 ### Download API
 
-If you are using Git without any UI, open a `Git Bash` console and use the commande
+If you are using Git without any UI, open a `Git Bash` console and use the commande:
 ```git clone https://github.com/fouhetK/userAPI.git```
 
 ### Opening the project
@@ -40,10 +40,10 @@ The API use an empty embedded database H2.
 ### Logged information
 
 The current API log the information in the console and in four differents files that are situated in the `logs` folder.
-- SpringBoot2App/application.log for all the message of the Spring framwork.
-- Hibernate/application.log for all the message of the Hibernate framwork.
-- AOP/application.log to register the information about each request using the Aspect Oriented Programming (Parameters, time execution, error and return value).
-- Error/application.log to register all Error that doesn't come from the three precedent sources.
+- `SpringBoot2App/application.log` for all the message of the Spring framwork.
+- `Hibernate/application.log` for all the message of the Hibernate framwork.
+- `AOP/application.log` to register the information about each request using the Aspect Oriented Programming (Parameters, time execution, error and return value).
+- `Error/application.log` to register all Error that doesn't come from the three precedent sources.
 
 All the information about the logging are located in the `log4j2.xml` within the `src/main/resources/` folder.
 
@@ -65,11 +65,11 @@ If you are using another operating system than windows, the port will be display
 
 The current API allow three request:
 1. Get to `http://localhost:8080/api/user` to recuperate the informations of all the Users present in the database.
-2. Get to `http://localhost:8080/api/user/$` where $ is the Id of the user you want to recuperate the information of.
-   - If the Id is not found, the API return an Error 404 User not found.
+2. Get to `http://localhost:8080/api/user/$` where `$` is the `Id` of the user you want to recuperate the information of.
+   - If the `Id` is not found, the API return an Error 404 User not found.
 3. Post to `http://localhost:8080/api/user`
    - The body of the Post request must contain the infomration of the User in JSON format.
-   - For a user to be created, he need three variable, a `username`, a `country` and a `birthdate`
+   - For a user to be created, he need three variable, a `username`, a `country` and a `birthdate`.
      - The username have no restriction.
      - The country must be `France` if you want the User to be registered succesfuly.
      - the birthdate must be in `yyyy-mm-dd` to be valide. ⚠️The user must be an Adult (above 18 year old) to be registered succesfuly.
@@ -82,7 +82,7 @@ The current API allow three request:
 
 All the tests are contained within the `src/test/java/com/atos/userapi/` folder.
 
-To run the test and see the result, right click on the test and select `Run`
+To run the test and see the result, right click on the test and select `Run`.
 
 ### Unit tests
 
