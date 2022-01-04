@@ -88,19 +88,19 @@ To run the test and see the result, right click on the test and select `Run`.
 
 ### Unit tests
 
-1. The UserEntityTest test if the data are not corrupted when created.
-1. The UserServiceTest use a Mock repository.
-2. The UserApiTest use a Mock Service and a Mock Mvc.
+1. The UserEntityTest test if the data are not corrupted when changed or recuperated.
+1. The UserServiceTest use a Mock repository to test if our Service work properly.
+2. The UserApiTest use a Mock Service and a Mock Mvc test if our API handle the request properly.
 
 ### Integration tests
 
-The integration test is made in three step.
+The integration test is made in three steps.
 1. The test between the UserService and the UserRepository.
 2. The test between the UserApi and the UserService with a Mock Mvc to emulate the Post/Get message.
 3. The test between Postman and our API.
-   - For this test, the API must be started and Postman used to send Post/Get message.
-   - A collection of Postman request are present within the `Tests Postman` folder.
-   - Within this collection, the request are separated in three:
-     - The Get at the base of the collection.
-     - The Post request that result in a Success in the "Success" folder.
-     - The Post request that result in an Error in the "Error" folder.
+   - For this test, the API must be running and Postman used to send Post/Get message.
+   - A collection of Postman request is present within the `Tests Postman` folder.
+   - Within this collection, the requests are separated in three:
+     - The Get requests are at the base of the collection.
+     - The Post requests that result in a Success in the "Success" folder.
+     - The Post requests that result in an Error in the "Error" folder.
